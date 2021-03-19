@@ -8,9 +8,9 @@ env:
 phases:
   install:
     runtime-versions:
-      docker: 20.10.5
+      docker: 20
       docker compose: 1.28.5
-      docker-cli: 1.0.9
+      #docker-cli: 1.0.9
   
   pre_build:
     commands:
