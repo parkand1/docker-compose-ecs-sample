@@ -9,12 +9,14 @@ phases:
   install:
     runtime-versions:
       docker: 20
-      docker compose: 1.28.5
+      #docker compose: 1.28.5
       #docker-cli: 1.0.9
   
   pre_build:
     commands:
       - echo Logging in to Docker Hub...
+      - docker --version 
+      - docker compose --version 
       - echo $DOCKERHUB_PASSWORD | docker login --username $DOCKERHUB_USERNAME --password-stdin
       - echo "Create Docker ECS context"
       - docker context create ecs ecs-workshop 
