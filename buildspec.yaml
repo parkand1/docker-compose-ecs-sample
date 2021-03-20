@@ -10,6 +10,7 @@ phases:
     runtime-versions:
       python: 3.8
     commands:
+      - wget -c https://github.com/docker/compose-cli/releases/download/v1.0.9/docker-linux-amd64.tar.gz
       - tar xzf docker-linux-amd64.tar.gz
       - chmod +x docker/docker
       - ln -s /path/to/existing/docker /directory/in/PATH/com.docker.cli
