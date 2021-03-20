@@ -12,8 +12,6 @@ phases:
     commands:
       - echo "Creating symbolic link from existing Docker CLI"
       - ln -s /usr/bin/docker /usr/local/bin/com.docker.cli
-      - echo "Verifying Docker CLI works with default context"
-      - ./docker/docker --context default ps
       - echo "Moving Docker Compose CLI to higher path in directory"
       - which docker
       - echo $PATH
