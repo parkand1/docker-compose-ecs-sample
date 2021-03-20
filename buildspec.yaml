@@ -11,7 +11,7 @@ phases:
       python: 3.8
     commands:
       - echo "Starting the installation of compose CLI in GO"
-      - curl -L https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
+      - sudo curl -L https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
       - docker compose --help
   
   pre_build:
