@@ -10,15 +10,20 @@ phases:
     runtime-versions:
       python: 3.8
     commands:
-      - echo "Creating symbolic link from existing Docker CLI"
-      - ln -s /usr/bin/docker /usr/local/bin/com.docker.cli
-      - echo "Moving Docker Compose CLI to higher path in directory"
-      - which docker
+      - tar xzf docker-linux-amd64.tar.gz
+      - chmod +x docker/docker
+      - ln -s /path/to/existing/docker /directory/in/PATH/com.docker.cli
       - echo $PATH
       - which docker
-      - echo "Starting the installation of compose CLI in GO"
-      - curl -L https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
-      - docker compose --help
+      - ln -s /usr/bin/docker /usr/local/bin/com.docker.cli
+      - mv docker/docker /usr/local/bin/docker
+      - docker version 
+      # - which docker
+      # - mv docker/docker /usr/local/bin/docker
+      # - docker version
+      # - echo "Starting the installation of compose CLI in GO"
+      # - curl -L https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
+      # - docker compose --help
   pre_build:
     commands:
       - echo Logging in to Docker Hub...
