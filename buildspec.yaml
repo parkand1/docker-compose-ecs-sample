@@ -15,8 +15,6 @@ phases:
       - echo "Moving Docker Compose CLI to higher path in directory"
       - which docker
       - echo $PATH
-      - mv docker/docker /usr/local/bin/docker
-      - echo "Confirming path is set correctly"
       - which docker
       - echo "Starting the installation of compose CLI in GO"
       - curl -L https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
