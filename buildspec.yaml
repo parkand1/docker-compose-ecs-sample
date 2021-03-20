@@ -11,9 +11,18 @@ phases:
       python: 3.8
     commands:
       - echo "Starting the installation of compose CLI in GO"
-      - sudo curl -L https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
+      - curl -L https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
       - docker compose --help
-  
+      - echo "Creating symbolic link from existing Docker CLI"
+      - sudo ln -s /usr/bin/docker /usr/local/bin/com.docker.cli
+      - echo "Verifying Docker CLI works with default context"
+      - ./docker/docker --context default ps
+      - echo "Moving Docker Compose CLI to higher path in directory"
+      - which docker
+      - echo $PATH
+      - sudo mv docker/docker /usr/local/bin/docker
+      - echo "Confirming path is set correctly"
+      - which docker
   pre_build:
     commands:
       - echo Logging in to Docker Hub...
