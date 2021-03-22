@@ -10,9 +10,6 @@ phases:
     runtime-versions:
       python: 3.8
     commands:
-      # - wget -c https://github.com/docker/compose-cli/releases/download/v1.0.9/docker-linux-amd64.tar.gz
-      # - tar xzf docker-linux-amd64.tar.gz
-      # - chmod +x docker/docker
       # - echo $PATH
       # - which docker
       # - ln -s /usr/bin/docker /usr/local/bin/com.docker.cli
@@ -21,6 +18,8 @@ phases:
       # - which docker
       # - mv docker/docker /usr/local/bin/docker
       # - docker version
+      - echo "moving docker-cli to /usr/bin/"
+      - ln -s /usr/local/bin/com.docker.cli /usr/bin/docker 
       - echo "Starting the installation of compose CLI in GO"
       - curl -L https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
       - docker compose --help
