@@ -17,10 +17,10 @@ phases:
       # - which docker
       # - ln -s /usr/bin/docker /usr/local/bin/com.docker.cli
       # - mv docker/docker /usr/local/bin/docker
-      - docker version 
-      - which docker
-      - mv docker/docker /usr/local/bin/docker
-      - docker version
+      # - docker version 
+      # - which docker
+      # - mv docker/docker /usr/local/bin/docker
+      # - docker version
       - echo "Starting the installation of compose CLI in GO"
       - curl -L https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
       - docker compose --help
