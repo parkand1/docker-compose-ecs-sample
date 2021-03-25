@@ -1,4 +1,8 @@
 version: 0.2
+env:
+  secrets-manager:
+    DOCKERHUB_USERNAME: arn:aws:secretsmanager:us-east-1:572179936737:secret:DOCKER_PULL_SECRETS_MANAGER-Mr8vsz
+    DOCKERHUB_PASSWORD: arn:aws:secretsmanager:us-east-1:572179936737:secret:DOCKER_PULL_SECRETS_MANAGER-Mr8vsz
 phases:
   install:
     runtime-versions:
