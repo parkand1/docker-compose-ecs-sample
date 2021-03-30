@@ -3,7 +3,7 @@ services:
     cap_add: 
       - SYS_PTRACE
     deploy:
-      replicas: 2
+      replicas: 3
       # resources:
       #   limits:
       #     memory: 2Gb
